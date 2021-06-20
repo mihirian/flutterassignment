@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 
 class ExpandCards extends StatefulWidget {
   final String title;
-  ExpandCards(this.title);
+  Color color;
+  ExpandCards(this.title, this.color);
 
   @override
   _ExpandCardsState createState() => _ExpandCardsState();
@@ -28,12 +29,23 @@ class _ExpandCardsState extends State<ExpandCards> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: ExpansionTile(
-            iconColor: Colors.white,
+            collapsedIconColor: Colors.black,
+            
+            onExpansionChanged: (value) => {
+              setState(() {
+                if (value) {
+                  widget.color = Colors.black;
+                } else {
+                  widget.color = Colors.white;
+                }
+              }),
+            },
+            iconColor: Colors.black,
             backgroundColor: Color.fromRGBO(248, 248, 248, 1),
             title: Text(
               widget.title,
               style: TextStyle(
-                color: Colors.white,
+                color: widget.color,
               ),
             ),
             children: <Widget>[

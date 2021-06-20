@@ -28,6 +28,7 @@ class LandAScreen extends StatelessWidget {
             ...DUMMY_BARS.map(
               (catData) => ExpandCards(
                 catData.title,
+                catData.color,
               ),
             ),
             

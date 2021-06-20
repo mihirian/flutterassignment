@@ -30,7 +30,9 @@ const DUMMY_CATEGORIES = const [
   ),
 ];
 const DUMMY_BARS = const [
-  BlueBar(title: 'My Calender'),
+  BlueBar(
+    title: 'My Calender',
+  ),
   BlueBar(title: 'Apply Leave'),
   BlueBar(title: 'Holiday Calender'),
 ];
